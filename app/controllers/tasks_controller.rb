@@ -4,7 +4,8 @@ class TasksController < ApplicationController
   end
 
   def create
-
+    @task = Task.new(task_params)
+    @task.save!
   end
 
   def update
@@ -15,5 +16,11 @@ class TasksController < ApplicationController
 
   def new
  	@task = Task.new 	
+  end
+  
+  private
+
+  def task_params
+    params.require(:task).permit(:title, :content, :time)
   end
 end
