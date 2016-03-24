@@ -1,4 +1,5 @@
-create new form
+<h1>Editing Note</h1>
+
 <%= form_for(@task) do |f| %>
 <%= f.label :title %>
 <%=f.text_field :title %><br>
@@ -8,7 +9,9 @@ create new form
 
 <%= f.label :time %>
 <%= f.date_field :time %><br>
-
  <%= f.submit %>
 
 <% end %> 
+
+<%= link_to 'Show', @task %> |
+<%= link_to 'Back', tasks_path %>
